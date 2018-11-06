@@ -5,7 +5,7 @@ var app = new Vue({
         inputvalue: "",
         titulos: "",
         bookfiltered: [],
-        booksoriginal:[],
+        booksoriginal: [],
 
     },
     created: function () {
@@ -30,7 +30,7 @@ var app = new Vue({
             }).then(function (json) {
                 app.books = json.books;
 
-                app.booksoriginal=json.books
+                app.booksoriginal = json.books
                 app.titulos;
 
 
@@ -44,30 +44,24 @@ var app = new Vue({
         },
 
         filter: function () {
-//             var none=document.getElementById("none")
-//            var block=document.getElementById("f1_card")
+
             this.bookfiltered = [];
             this.books = this.booksoriginal
             console.log(this.books.length)
             console.log(this.inputvalue)
-                        console.log(this.bookfiltered)
+            console.log(this.bookfiltered)
 
-            for (var r = 0; r <this.books.length; r++) {
+            for (var r = 0; r < this.books.length; r++) {
 
                 this.titulos = this.books[r].titulo.toUpperCase();
-                console.log((this.titulos.includes(this.inputvalue.toUpperCase())) )
+                console.log((this.titulos.includes(this.inputvalue.toUpperCase())))
                 if (this.titulos.includes(this.inputvalue.toUpperCase())) {
                     this.bookfiltered.push(this.books[r])
                 }
-////            if (this.inputvalue==null){
-//                
-//                block=none 
-//        
-//                
-//                }
+
 
             }
-   
+
             console.log(this.bookfiltered)
             this.books = this.bookfiltered;
 
