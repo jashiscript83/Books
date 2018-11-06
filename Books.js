@@ -29,7 +29,6 @@ var app = new Vue({
 
             }).then(function (json) {
                 app.books = json.books;
-
                 app.booksoriginal = json.books
                 app.titulos;
 
@@ -47,14 +46,12 @@ var app = new Vue({
 
             this.bookfiltered = [];
             this.books = this.booksoriginal
-            console.log(this.books.length)
-            console.log(this.inputvalue)
-            console.log(this.bookfiltered)
+           
 
             for (var r = 0; r < this.books.length; r++) {
 
                 this.titulos = this.books[r].titulo.toUpperCase();
-                console.log((this.titulos.includes(this.inputvalue.toUpperCase())))
+               
                 if (this.titulos.includes(this.inputvalue.toUpperCase())) {
                     this.bookfiltered.push(this.books[r])
                 }
@@ -62,7 +59,7 @@ var app = new Vue({
 
             }
 
-            console.log(this.bookfiltered)
+          
             this.books = this.bookfiltered;
 
 
