@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+-->
+    <link rel="stylesheet" href="Books.css">
+
+
+</head>
+
+<body>
+    <div id="app">
+
+        <h2 class="title">La Biblioteca</h2>
+        <img class="logo" src="BestBooksOf2016.jpg">
+
+        <div class="search">
+
+            <input @keyup="filter" type="text" placeholder="Busca tu libro" name="books" v-model="inputvalue">
+            <button @click="filter">BUSCA</button>
+        </div>
+
+        <div class="flex">
+            <div v-for="book in  books" id="f1_container">
+                <div class="body" id="f1_card" class="shadow">
+
+
+                    <div class="front face">
+
+                        <img v-bind:src="book.portada">
+
+                    </div>
+                    <div class="back face center">
+                        <h3>{{book.titulo}}</h3>
+                        <p>{{book.descripcion}}</p>
+
+                    </div>
+                    +
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="Books.js">
+    </script>
+</body>
+
+</html>
